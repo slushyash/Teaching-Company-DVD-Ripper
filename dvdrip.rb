@@ -8,15 +8,15 @@ print "Number of Parts = "
 number_of_videos = gets.to_i * 12
 
 print "Name of Directory? "
-directory_name = gets.to_s.gsub("\n", "");
+directory_name = gets.to_s.gsub("\n", "")
 
-print "Starting Part? (blank for beginning) "
-beginning_video = (gets.to_i - 1) * 12 + 1
+print "Starting Lecture? (1 for beginning) "
+beginning_lecture = gets.to_i
 
 new_dir_command = "mkdir #{directory_name}"
 system(new_dir_command)
 
-for lecture_number in (beginning_video..number_of_videos)
+for lecture_number in (beginning_lecture..number_of_videos)
 	videos_per_disc = 6
 	track_number_to_rip = ((lecture_number % videos_per_disc == 0) ? 6 : lecture_number % videos_per_disc) + 1
 	rip_command = "./HandBrakeCLI -i /dev/disk1 --preset=\"Normal\" -t #{track_number_to_rip} --deinterlace=\"fast\" -o #{directory_name}" + "/#{lecture_number}.mp4"
