@@ -20,7 +20,7 @@ system new_dir_command
 for lecture_number in (beginning_lecture..number_of_videos)
 	videos_per_disc = 6
 	track_number_to_rip = ((lecture_number % videos_per_disc == 0) ? videos_per_disc : lecture_number % videos_per_disc) + 1
-	rip_command = "./HandBrakeCLI -i #{DVD_DRIVE_LOCATION} --preset=\"Normal\" -t #{track_number_to_rip} --deinterlace=\"fast\" -o #{directory_name}" + "/#{lecture_number}.mp4"
+	rip_command = "./HandBrakeCLI -i #{DVD_DRIVE_LOCATION} --preset=\"Normal\" -t #{track_number_to_rip} -o #{directory_name}" + "/#{lecture_number}.mp4"
 	system rip_command
 	if((lecture_number % videos_per_disc == 0) && lecture_number != number_of_videos)
 		sendNotification "Laptop: New Disc Needed"
