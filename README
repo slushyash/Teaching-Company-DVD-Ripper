@@ -1,0 +1,7 @@
+This is a quick script (although it should be a shell script) to quickly rip teaching company videos in Ruby. Right now it's not user friendly, it doesn't catch errors, and hasn't been widely tested. But soon, it shal be awesome. I promise :).
+
+Requirements: HandBrakeCLI (http://handbrake.fr)
+
+By the way: the sendnotification method is optional. I like to be alerted with my phone whenever I need to insert new discs  though. If you want to use it, download airgram for iOS/Android and change the email address to yours. It's that simple.
+
+Works on Mac. Should work on Linux if you change /dev/disk1 to /dev/dvd or something like that. I dunno.
